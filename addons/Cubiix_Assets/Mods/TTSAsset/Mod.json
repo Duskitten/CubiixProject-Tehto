@@ -1,0 +1,53 @@
+{
+	"ModID" : "TTSAssets",
+	"ModName" : "Cubiix Project: To The Stars Assets",
+	"ModDesc" : "A Collection of assets tailored for Cubiix Project:TTS",
+	"ModAuthor" : "Duskitten/Selkspace",
+	"Assets" : {
+		"Models":{
+		},
+		"Override_Binds":{},
+		"Maps":{
+			"Hexstaria_V2":{
+				"Server_Path":"Assets/Maps/Server/hexstaria_v2.tscn",
+				"Client_Path":"Assets/Maps/Client/hexstaria_v2.tscn",
+				"ServerRoomID":"Hexstaria_V2",
+				"Name":"Hexstaria",
+				"Description":"The home of the Cubiix.",
+				"Image_Preview":"Assets/Textures/UI/Map_Previews/Hexstaria_MK2.png",
+				"Spawn_Locations":{
+					"Docks":["Vector3(22.381,0.098,12.539)","Vector3(0,3.14159,0)"]
+				}
+			},
+		},
+		"Scripts":{},
+		"Materials":{},
+		"Animations":{},
+		"Dialogue":{},
+		"Devlog_Entries":{
+			"V_B.01.00":{
+				"Tag":"Log_Entry",
+				"Description":"Hello, thank you for opening this game and coming to look at what I've spent the last 2 years of my life working on!\n\n\nSo far what I've added to this game is character customizing, chat, servers, commands, multiplayer, modding, and you name it really, there's no 'actual' content yet, but that will show up soon enough as I keep working on this project!\n\n\nIf you'd like to help support this project, please consider following me on [color=blue][url={\"OpenURL\": \"duskitten.bsky.social\"]Bluesky[/url][/color].\n\nOr even consider donating via [color=blue][url={\"OpenURL\": \"https://www.patreon.com/c/CubiixProject\"]Patreon[/url][/color]!\n\n\nThank you for coming to enjoy my world and one of my various joys in life!",
+				"Author":"Duskitten",
+				"Date":"April 04, 2025"
+			}
+		},
+		"Network_Commands":{
+			"TTS_Ping":{
+				"Name":"TTS_Ping",
+				"Tag":"Network_Command",
+				"Path":"Assets/Scripts/Shared/Network_Commands/Ping.gd",
+			},
+			"TTS_Ping_Init":{
+				"Name":"TTS_Ping_Init",
+				"Tag":"Network_Command",
+				"Path":"Assets/Scripts/Shared/Network_Commands/Ping_Init.gd",
+			},
+			"TTS_PollUpdate":{
+				"Name":"TTS_PollUpdate",
+				"Tag":"Network_Command",
+				"Path":"Assets/Scripts/Shared/Network_Commands/PollUpdate.gd",
+			},
+		}
+	}
+}
