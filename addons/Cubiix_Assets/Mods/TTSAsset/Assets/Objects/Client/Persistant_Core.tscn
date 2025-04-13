@@ -1,6 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://dvvu2ls7inlev"]
+[gd_scene load_steps=35 format=3 uid="uid://dvvu2ls7inlev"]
 
 [ext_resource type="Script" uid="uid://ktth0ilkl1ry" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Scripts/Client/persistant_core.gd" id="1_avm5g"]
+[ext_resource type="Texture2D" uid="uid://dksg4lkt5bb2n" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0001.png" id="3_k0g1t"]
+[ext_resource type="Texture2D" uid="uid://dwq5jvw18s58h" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0002.png" id="4_1exjl"]
+[ext_resource type="Texture2D" uid="uid://dyor8pcpt654" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0003.png" id="5_25qpu"]
+[ext_resource type="Texture2D" uid="uid://b7x6wsmshycs4" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0004.png" id="6_tqidq"]
+[ext_resource type="Texture2D" uid="uid://cep0gebtrlobh" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0005.png" id="7_2r16q"]
+[ext_resource type="Texture2D" uid="uid://d8ryoqqd2s6d" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0006.png" id="8_a834s"]
+[ext_resource type="Texture2D" uid="uid://c8d1tnu0k5766" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0007.png" id="9_l1n1c"]
+[ext_resource type="Texture2D" uid="uid://dnxdct735kki" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0008.png" id="10_hpwe3"]
+[ext_resource type="Script" uid="uid://cbeoj6uq50cuc" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Scripts/Client/Tools/Dropper.gd" id="11_ml746"]
 [ext_resource type="FontFile" uid="uid://d4abxqqufataa" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Fonts/Courier-Prime-Code/Courier Prime Code.ttf" id="13_7phac"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0sve"]
@@ -212,6 +221,66 @@ _data = {
 &"RESET": SubResource("Animation_e2t24")
 }
 
+[sub_resource type="Animation" id="Animation_y3g55"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_k0g1t")]
+}
+
+[sub_resource type="Animation" id="Animation_xs38g"]
+resource_name = "new_animation"
+length = 1.00001
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_k0g1t"), ExtResource("4_1exjl"), ExtResource("5_25qpu"), ExtResource("6_tqidq"), ExtResource("7_2r16q"), ExtResource("8_a834s"), ExtResource("9_l1n1c"), ExtResource("10_hpwe3")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uhmy8"]
+_data = {
+&"RESET": SubResource("Animation_y3g55"),
+&"new_animation": SubResource("Animation_xs38g")
+}
+
+[sub_resource type="Gradient" id="Gradient_1exjl"]
+colors = PackedColorArray(0.129558, 0.129559, 0.129558, 1, 0.187176, 0.187176, 0.187176, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_25qpu"]
+gradient = SubResource("Gradient_1exjl")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tqidq"]
+texture = SubResource("GradientTexture2D_25qpu")
+
+[sub_resource type="Gradient" id="Gradient_k0g1t"]
+offsets = PackedFloat32Array(0, 0.0819672, 0.188525, 0.42623, 0.57377, 0.885246, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.179327, 0.179327, 0.179327, 1, 0.355314, 0.355314, 0.355313, 1, 0.252028, 0.252028, 0.252028, 1, 0.144063, 0.144063, 0.144063, 1, 0.144063, 0.144063, 0.144063, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1exjl"]
+gradient = SubResource("Gradient_k0g1t")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_25qpu"]
+texture = SubResource("GradientTexture2D_1exjl")
+
 [node name="Persistant" type="Node"]
 script = ExtResource("1_avm5g")
 
@@ -257,7 +326,6 @@ texture_filter = 1
 position = Vector2(-40, 18)
 rotation = 1.5708
 hframes = 4
-frame = 1
 
 [node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer/Transitioner/Control"]
 texture_filter = 1
@@ -288,6 +356,7 @@ texture_filter = 1
 position = Vector2(-40, -40)
 rotation = 3.14159
 hframes = 4
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Transitioner/Control"]
 libraries = {
@@ -356,6 +425,124 @@ libraries = {
 
 [node name="Node2D" type="Node2D" parent="Node2D/Player"]
 
+[node name="HeadShot" type="Sprite2D" parent="Node2D/Player"]
+visible = false
+position = Vector2(334, 64)
+texture = ExtResource("3_k0g1t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Player/HeadShot"]
+libraries = {
+&"": SubResource("AnimationLibrary_uhmy8")
+}
+speed_scale = 1.25
+
 [node name="Audio" type="AudioStreamPlayer" parent="Node2D"]
 
 [node name="Network_Players" type="Node2D" parent="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_ml746")
+
+[node name="Panel2" type="Panel" parent="Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_tqidq")
+
+[node name="Topbar" type="Panel" parent="Control"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_25qpu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Topbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSeparator" type="VSeparator" parent="Control/Topbar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="SpinBox" type="SpinBox" parent="Control/Topbar/HBoxContainer"]
+custom_minimum_size = Vector2(131.695, 0)
+layout_mode = 2
+min_value = 1.0
+max_value = 999999.0
+value = 1.0
+rounded = true
+alignment = 1
+prefix = "Columns"
+
+[node name="ExportImageSize" type="Label" parent="Control/Topbar/HBoxContainer"]
+layout_mode = 2
+text = "Export Image Size: "
+
+[node name="VSeparator3" type="VSeparator" parent="Control/Topbar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="Button2" type="Button" parent="Control/Topbar/HBoxContainer"]
+layout_mode = 2
+text = "Export"
+
+[node name="VSeparator2" type="VSeparator" parent="Control/Topbar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 244.0
+stretch_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.049
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.247999
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="SubViewport" type="SubViewport" parent="Control"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(2, 2)
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="Control/SubViewport"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="value_changed" from="Control/Topbar/HBoxContainer/SpinBox" to="Control" method="_on_spin_box_value_changed"]
+[connection signal="pressed" from="Control/Topbar/HBoxContainer/Button2" to="Control" method="_on_button_2_pressed"]
