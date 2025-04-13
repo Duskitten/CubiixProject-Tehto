@@ -134,7 +134,7 @@ func load_mod_assets() -> void:
 						
 	call_deferred("emit_signal","load_finished")
 
-func find_script(ID:String, ApplyNode:Node3D, ParentNode:Node3D) -> void:
+func find_script(ID:String, ApplyNode:Node2D, ParentNode:Node2D) -> void:
 	var path = ""
 	var AssetParts = ID.split("/")
 	if assets.has(AssetParts[0]) &&\
@@ -144,7 +144,7 @@ func find_script(ID:String, ApplyNode:Node3D, ParentNode:Node3D) -> void:
 			ApplyNode.set_script(load(assets[AssetParts[0]]["Scripts"][AssetParts[1]]["Path"]))
 			ApplyNode.name = AssetParts[1]
 
-func find_animation(ID:String, ApplyNode:Node3D) -> void:
+func find_animation(ID:String, ApplyNode:Node2D) -> void:
 	var path = ""
 	var AssetParts = ID.split("/")
 	if assets.has(AssetParts[0]) &&\

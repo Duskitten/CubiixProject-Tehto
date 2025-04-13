@@ -26,7 +26,7 @@ func _ready() -> void:
 	emit_signal("Loaded")
 	if !Load_Script_ID.is_empty():
 		for i in Load_Script_ID.size():
-			var NewNode = Node3D.new()
+			var NewNode = Node2D.new()
 			Assets.find_script(Load_Script_ID[i],NewNode,self)
 			call_deferred("add_child",NewNode)
 			if !Load_Script_Passthrough[i].is_empty():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dvvu2ls7inlev"]
+[gd_scene load_steps=44 format=3 uid="uid://dvvu2ls7inlev"]
 
 [ext_resource type="Script" uid="uid://ktth0ilkl1ry" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Scripts/Client/persistant_core.gd" id="1_avm5g"]
 [ext_resource type="Script" uid="uid://1gt6me2qpxop" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Scripts/Client/Player/Character_Manager.gd" id="3_geor7"]
@@ -232,8 +232,8 @@ tracks/0/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_wnqyt"]
-resource_name = "Idle_Down_Right"
+[sub_resource type="Animation" id="Animation_3dgvn"]
+resource_name = "Idle_Left"
 length = 0.0333367
 loop_mode = 1
 tracks/0/type = "value"
@@ -246,7 +246,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [7]
 }
 
 [sub_resource type="Animation" id="Animation_4cnu4"]
@@ -266,23 +266,6 @@ tracks/0/keys = {
 "values": [3]
 }
 
-[sub_resource type="Animation" id="Animation_js50j"]
-resource_name = "Idle_Up_Right"
-length = 0.0333367
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Character_Texture:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-
 [sub_resource type="Animation" id="Animation_87xvc"]
 resource_name = "Idle_Up"
 length = 0.0333367
@@ -300,57 +283,6 @@ tracks/0/keys = {
 "values": [5]
 }
 
-[sub_resource type="Animation" id="Animation_60f2h"]
-resource_name = "Idle_Up_Left"
-length = 0.0333367
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Character_Texture:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-
-[sub_resource type="Animation" id="Animation_3dgvn"]
-resource_name = "Idle_Left"
-length = 0.0333367
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Character_Texture:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [7]
-}
-
-[sub_resource type="Animation" id="Animation_k0g1t"]
-resource_name = "Idle_Down_Left"
-length = 0.0333367
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Character_Texture:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="Animation" id="Animation_1exjl"]
 length = 0.001
 tracks/0/type = "value"
@@ -366,17 +298,237 @@ tracks/0/keys = {
 "values": [7]
 }
 
+[sub_resource type="Animation" id="Animation_25qpu"]
+resource_name = "Walk_Down"
+length = 0.333338
+loop_mode = 1
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25, 0.291667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19, 20, 21, 22, 23]
+}
+
+[sub_resource type="Animation" id="Animation_a834s"]
+resource_name = "Walk_Right"
+length = 0.333338
+loop_mode = 1
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25, 0.291667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [32, 33, 34, 35, 36, 37, 38, 39]
+}
+
+[sub_resource type="Animation" id="Animation_l1n1c"]
+resource_name = "Walk_Left"
+length = 0.333338
+loop_mode = 1
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25, 0.291667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [64, 65, 66, 67, 68, 69, 70, 71]
+}
+
+[sub_resource type="Animation" id="Animation_hpwe3"]
+resource_name = "Walk_Up"
+length = 0.333338
+loop_mode = 1
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25, 0.291667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51, 52, 53, 54, 55]
+}
+
+[sub_resource type="Animation" id="Animation_xs38g"]
+resource_name = "Walk_UpRight"
+length = 0.333338
+loop_mode = 1
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25, 0.291667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [40, 41, 42, 43, 44, 45, 46, 47]
+}
+
+[sub_resource type="Animation" id="Animation_ml746"]
+resource_name = "Walk_UpLeft"
+length = 0.333338
+loop_mode = 1
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25, 0.291667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [56, 57, 58, 59, 60, 61, 62, 63]
+}
+
+[sub_resource type="Animation" id="Animation_2r16q"]
+resource_name = "Walk_DownRight"
+length = 0.333338
+loop_mode = 1
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25, 0.291667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27, 28, 29, 30, 31]
+}
+
+[sub_resource type="Animation" id="Animation_tqidq"]
+resource_name = "Walk_DownLeft"
+length = 0.333338
+loop_mode = 1
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25, 0.291667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_js50j"]
+resource_name = "Idle_UpRight"
+length = 0.0333367
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_60f2h"]
+resource_name = "Idle_UpLeft"
+length = 0.0333367
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_wnqyt"]
+resource_name = "Idle_DownRight"
+length = 0.0333367
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_k0g1t"]
+resource_name = "Idle_DownLeft"
+length = 0.0333367
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1exjl"]
 _data = {
 &"Idle_Down": SubResource("Animation_geor7"),
-&"Idle_Down_Left": SubResource("Animation_k0g1t"),
-&"Idle_Down_Right": SubResource("Animation_wnqyt"),
+&"Idle_DownLeft": SubResource("Animation_k0g1t"),
+&"Idle_DownRight": SubResource("Animation_wnqyt"),
 &"Idle_Left": SubResource("Animation_3dgvn"),
 &"Idle_Right": SubResource("Animation_4cnu4"),
 &"Idle_Up": SubResource("Animation_87xvc"),
-&"Idle_Up_Left": SubResource("Animation_60f2h"),
-&"Idle_Up_Right": SubResource("Animation_js50j"),
-&"RESET": SubResource("Animation_1exjl")
+&"Idle_UpLeft": SubResource("Animation_60f2h"),
+&"Idle_UpRight": SubResource("Animation_js50j"),
+&"RESET": SubResource("Animation_1exjl"),
+&"Walk_Down": SubResource("Animation_25qpu"),
+&"Walk_DownLeft": SubResource("Animation_tqidq"),
+&"Walk_DownRight": SubResource("Animation_2r16q"),
+&"Walk_Left": SubResource("Animation_l1n1c"),
+&"Walk_Right": SubResource("Animation_a834s"),
+&"Walk_Up": SubResource("Animation_hpwe3"),
+&"Walk_UpLeft": SubResource("Animation_ml746"),
+&"Walk_UpRight": SubResource("Animation_xs38g")
 }
 
 [sub_resource type="Gradient" id="Gradient_1exjl"]
@@ -439,6 +591,7 @@ frame = 1
 texture_filter = 1
 position = Vector2(-11, 18)
 hframes = 4
+frame = 3
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/Transitioner/Control"]
 texture_filter = 1
@@ -539,8 +692,14 @@ libraries = {
 
 [node name="Node2D" type="Node2D" parent="."]
 
+[node name="Line2D" type="Line2D" parent="Node2D"]
+width = 1.0
+
 [node name="Player" type="CharacterBody2D" parent="Node2D"]
+position = Vector2(210, 220)
 script = ExtResource("3_geor7")
+Load_Script_ID = Array[String](["TehtoAssets/Character_Controller"])
+Load_Script_Passthrough = Array[Dictionary]([{}])
 Assets_Path = "/root/Main_Scene/CoreLoader/AssetData"
 Character_ID = "TehtoAssets/U.I."
 
@@ -548,6 +707,7 @@ Character_ID = "TehtoAssets/U.I."
 
 [node name="Character_Texture" type="Sprite2D" parent="Node2D/Player/Hub"]
 texture = ExtResource("4_wnqyt")
+offset = Vector2(0, -25)
 hframes = 8
 vframes = 10
 frame = 7
@@ -556,12 +716,14 @@ frame = 7
 libraries = {
 &"": SubResource("AnimationLibrary_1exjl")
 }
+speed_scale = 0.8
 
 [node name="Audio" type="AudioStreamPlayer" parent="Node2D"]
 
 [node name="Network_Players" type="Node2D" parent="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="Node2D"]
+position = Vector2(576, 324)
 
 [node name="Control" type="Control" parent="."]
 visible = false

@@ -23,7 +23,11 @@
 				}
 			},
 		},
-		"Scripts":{},
+		"Scripts":{
+			"Character_Controller":{
+				"Path":"Assets/Scripts/Client/Character_Controller.gd"
+			},
+		},
 		"Materials":{},
 		"Animations":{},
 		"Dialogue":{},
