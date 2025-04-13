@@ -1,14 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://dvvu2ls7inlev"]
+[gd_scene load_steps=24 format=3 uid="uid://dvvu2ls7inlev"]
 
 [ext_resource type="Script" uid="uid://ktth0ilkl1ry" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Scripts/Client/persistant_core.gd" id="1_avm5g"]
-[ext_resource type="Texture2D" uid="uid://dksg4lkt5bb2n" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0001.png" id="3_k0g1t"]
-[ext_resource type="Texture2D" uid="uid://dwq5jvw18s58h" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0002.png" id="4_1exjl"]
-[ext_resource type="Texture2D" uid="uid://dyor8pcpt654" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0003.png" id="5_25qpu"]
-[ext_resource type="Texture2D" uid="uid://b7x6wsmshycs4" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0004.png" id="6_tqidq"]
-[ext_resource type="Texture2D" uid="uid://cep0gebtrlobh" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0005.png" id="7_2r16q"]
-[ext_resource type="Texture2D" uid="uid://d8ryoqqd2s6d" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0006.png" id="8_a834s"]
-[ext_resource type="Texture2D" uid="uid://c8d1tnu0k5766" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0007.png" id="9_l1n1c"]
-[ext_resource type="Texture2D" uid="uid://dnxdct735kki" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0008.png" id="10_hpwe3"]
 [ext_resource type="Script" uid="uid://cbeoj6uq50cuc" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Scripts/Client/Tools/Dropper.gd" id="11_ml746"]
 [ext_resource type="FontFile" uid="uid://d4abxqqufataa" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Fonts/Courier-Prime-Code/Courier Prime Code.ttf" id="13_7phac"]
 
@@ -221,45 +213,6 @@ _data = {
 &"RESET": SubResource("Animation_e2t24")
 }
 
-[sub_resource type="Animation" id="Animation_y3g55"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_k0g1t")]
-}
-
-[sub_resource type="Animation" id="Animation_xs38g"]
-resource_name = "new_animation"
-length = 1.00001
-loop_mode = 1
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("3_k0g1t"), ExtResource("4_1exjl"), ExtResource("5_25qpu"), ExtResource("6_tqidq"), ExtResource("7_2r16q"), ExtResource("8_a834s"), ExtResource("9_l1n1c"), ExtResource("10_hpwe3")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_uhmy8"]
-_data = {
-&"RESET": SubResource("Animation_y3g55"),
-&"new_animation": SubResource("Animation_xs38g")
-}
-
 [sub_resource type="Gradient" id="Gradient_1exjl"]
 colors = PackedColorArray(0.129558, 0.129559, 0.129558, 1, 0.187176, 0.187176, 0.187176, 1)
 
@@ -356,7 +309,6 @@ texture_filter = 1
 position = Vector2(-40, -40)
 rotation = 3.14159
 hframes = 4
-frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Transitioner/Control"]
 libraries = {
@@ -424,17 +376,6 @@ libraries = {
 [node name="Player" type="Node2D" parent="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="Node2D/Player"]
-
-[node name="HeadShot" type="Sprite2D" parent="Node2D/Player"]
-visible = false
-position = Vector2(334, 64)
-texture = ExtResource("3_k0g1t")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Player/HeadShot"]
-libraries = {
-&"": SubResource("AnimationLibrary_uhmy8")
-}
-speed_scale = 1.25
 
 [node name="Audio" type="AudioStreamPlayer" parent="Node2D"]
 

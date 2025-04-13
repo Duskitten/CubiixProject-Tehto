@@ -27,10 +27,10 @@ func _on_spin_box_value_changed(value: float) -> void:
 
 
 func _on_button_2_pressed() -> void:
-	$SubViewport.size = $ScrollContainer/GridContainer.get_rect().size
-	var newimages:GridContainer = $ScrollContainer/GridContainer.duplicate(true)
-	newimages.position = Vector2.ZERO
-	$SubViewport/Control.add_child(newimages)
-	await RenderingServer.frame_post_draw
-	$SubViewport.get_texture().get_image().save_png("user://beep.png") 
+	#$SubViewport.size = $ScrollContainer/GridContainer.get_rect().size
+	#var newimages:GridContainer = $ScrollContainer/GridContainer.duplicate(true)
+	#newimages.position = Vector2.ZERO
+	#$SubViewport/Control.add_child(newimages)
+	#await RenderingServer.frame_post_draw
+	#$SubViewport.get_texture().get_image().save_png("user://beep.png") 
 	OS.shell_open(ProjectSettings.globalize_path("user://"))

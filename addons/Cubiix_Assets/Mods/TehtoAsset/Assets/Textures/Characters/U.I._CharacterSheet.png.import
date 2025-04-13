@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcl8q3abw4xqj"
-path="res://.godot/imported/Test0024.png-95840a00793e0281edca2d39bf12fe39.ctex"
+uid="uid://v84l3l0h87wx"
+path="res://.godot/imported/U.I._CharacterSheet.png-8a2e47f9fc79526e31035554879db174.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Walk_DL/Test0024.png"
-dest_files=["res://.godot/imported/Test0024.png-95840a00793e0281edca2d39bf12fe39.ctex"]
+source_file="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/U.I._CharacterSheet.png"
+dest_files=["res://.godot/imported/U.I._CharacterSheet.png-8a2e47f9fc79526e31035554879db174.ctex"]
 
 [params]
 
