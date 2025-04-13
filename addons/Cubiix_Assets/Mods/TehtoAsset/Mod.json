@@ -4,7 +4,10 @@
 	"ModDesc" : "A Collection of assets tailored for Cubiix Project:Tehto",
 	"ModAuthor" : "Duskitten/Selkspace",
 	"Assets" : {
-		"Models":{
+		"Characters":{
+			"U.I.":{
+				"Path":"Assets/Textures/Characters/U.I._CharacterSheet.png"
+			}
 		},
 		"Override_Binds":{},
 		"Maps":{
@@ -14,7 +17,7 @@
 				"ServerRoomID":"TestHub",
 				"Name":"TestHub",
 				"Description":"Testing Tehto Hub",
-				"Image_Preview":"Assets/Textures/UI/Map_Previews/Hexstaria_MK2.png",
+				"Image_Preview":"",
 				"Spawn_Locations":{
 					"Docks":["Vector2(0,0)"]
 				}
@@ -33,6 +36,21 @@
 			}
 		},
 		"Network_Commands":{
+			"Tehto_Ping":{
+				"Name":"Tehto_Ping",
+				"Tag":"Network_Command",
+				"Path":"Assets/Scripts/Shared/Network_Commands/Ping.gd",
+			},
+			"Tehto_Ping_Init":{
+				"Name":"Tehto_Ping_Init",
+				"Tag":"Network_Command",
+				"Path":"Assets/Scripts/Shared/Network_Commands/Ping_Init.gd",
+			},
+			"Tehto_PollUpdate":{
+				"Name":"Tehto_PollUpdate",
+				"Tag":"Network_Command",
+				"Path":"Assets/Scripts/Shared/Network_Commands/PollUpdate.gd",
+			},
 		}
 	}
 }

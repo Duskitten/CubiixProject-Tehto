@@ -1,6 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://dvvu2ls7inlev"]
+[gd_scene load_steps=36 format=3 uid="uid://dvvu2ls7inlev"]
 
 [ext_resource type="Script" uid="uid://ktth0ilkl1ry" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Scripts/Client/persistant_core.gd" id="1_avm5g"]
+[ext_resource type="Script" uid="uid://1gt6me2qpxop" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Scripts/Client/Player/Character_Manager.gd" id="3_geor7"]
+[ext_resource type="Texture2D" uid="uid://v84l3l0h87wx" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/U.I._CharacterSheet.png" id="4_wnqyt"]
 [ext_resource type="Script" uid="uid://cbeoj6uq50cuc" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Scripts/Client/Tools/Dropper.gd" id="11_ml746"]
 [ext_resource type="FontFile" uid="uid://d4abxqqufataa" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Fonts/Courier-Prime-Code/Courier Prime Code.ttf" id="13_7phac"]
 
@@ -213,6 +215,170 @@ _data = {
 &"RESET": SubResource("Animation_e2t24")
 }
 
+[sub_resource type="Animation" id="Animation_geor7"]
+resource_name = "Idle_Down"
+length = 0.0333367
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_wnqyt"]
+resource_name = "Idle_Down_Right"
+length = 0.0333367
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_4cnu4"]
+resource_name = "Idle_Right"
+length = 0.0333367
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_js50j"]
+resource_name = "Idle_Up_Right"
+length = 0.0333367
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_87xvc"]
+resource_name = "Idle_Up"
+length = 0.0333367
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="Animation" id="Animation_60f2h"]
+resource_name = "Idle_Up_Left"
+length = 0.0333367
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_3dgvn"]
+resource_name = "Idle_Left"
+length = 0.0333367
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_k0g1t"]
+resource_name = "Idle_Down_Left"
+length = 0.0333367
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1exjl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1exjl"]
+_data = {
+&"Idle_Down": SubResource("Animation_geor7"),
+&"Idle_Down_Left": SubResource("Animation_k0g1t"),
+&"Idle_Down_Right": SubResource("Animation_wnqyt"),
+&"Idle_Left": SubResource("Animation_3dgvn"),
+&"Idle_Right": SubResource("Animation_4cnu4"),
+&"Idle_Up": SubResource("Animation_87xvc"),
+&"Idle_Up_Left": SubResource("Animation_60f2h"),
+&"Idle_Up_Right": SubResource("Animation_js50j"),
+&"RESET": SubResource("Animation_1exjl")
+}
+
 [sub_resource type="Gradient" id="Gradient_1exjl"]
 colors = PackedColorArray(0.129558, 0.129559, 0.129558, 1, 0.187176, 0.187176, 0.187176, 1)
 
@@ -373,15 +539,32 @@ libraries = {
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="Player" type="Node2D" parent="Node2D"]
+[node name="Player" type="CharacterBody2D" parent="Node2D"]
+script = ExtResource("3_geor7")
+Assets_Path = "/root/Main_Scene/CoreLoader/AssetData"
+Character_ID = "TehtoAssets/U.I."
 
-[node name="Node2D" type="Node2D" parent="Node2D/Player"]
+[node name="Hub" type="Node2D" parent="Node2D/Player"]
+
+[node name="Character_Texture" type="Sprite2D" parent="Node2D/Player/Hub"]
+texture = ExtResource("4_wnqyt")
+hframes = 8
+vframes = 10
+frame = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Player/Hub"]
+libraries = {
+&"": SubResource("AnimationLibrary_1exjl")
+}
 
 [node name="Audio" type="AudioStreamPlayer" parent="Node2D"]
 
 [node name="Network_Players" type="Node2D" parent="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

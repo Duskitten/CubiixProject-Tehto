@@ -128,7 +128,7 @@ func load_mod_assets() -> void:
 					if compiled_assets.keys().has(assets[i][x][y]["Path"]):
 						assets[i][x][y]["Node"] = compiled_assets[assets[i][x][y]["Path"]]
 					else:
-						if x != "Scripts" && x != "Network_Commands":
+						if x != "Scripts" && x != "Network_Commands" && x != "Characters":
 							compiled_assets[assets[i][x][y]["Path"]] = load(assets[i][x][y]["Path"]).instantiate()
 							assets[i][x][y]["Node"] = compiled_assets[assets[i][x][y]["Path"]]
 						
@@ -192,3 +192,11 @@ func find_command(ID:String) -> Dictionary:
 			return assets[AssetParts[0]]["Network_Commands"][AssetParts[1]]
 	
 	return {}
+	
+func find_character(ID:String, ApplyNode:Sprite2D) -> void:
+	var path = ""
+	var AssetParts = ID.split("/")
+	if assets.has(AssetParts[0]) &&\
+		assets[AssetParts[0]].has("Characters") &&\
+		assets[AssetParts[0]]["Characters"].has(AssetParts[1]):
+			ApplyNode.texture = load(assets[AssetParts[0]]["Characters"][AssetParts[1]]["Path"])
