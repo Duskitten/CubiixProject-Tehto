@@ -13,11 +13,11 @@ var active_point:Vector2 = Vector2.ZERO
 func _ready() -> void:
 	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_AT_LEAST_ONE_WALKABLE
 	astar_grid.cell_shape = AStarGrid2D.CELL_SHAPE_SQUARE
-	astar_grid.region = Rect2i(0, 0, 48, 48)
+	astar_grid.region = Rect2i(0, 0, 160, 160)
 	astar_grid.cell_size = Vector2(32, 32)
 	astar_grid.update()
 	active_point = (get_parent().global_position/32).round() *32
-	print(active_point)
+#	print(active_point)
 
 func _process(delta: float) -> void:
 	var compiledtext = ""
@@ -54,9 +54,7 @@ func _process(delta: float) -> void:
 			Anim_Player.play(Anim)
 			
 	if Input.is_action_just_pressed("lmb"):
-		print(get_viewport().get_mouse_position()/32)
 		var path = astar_grid.get_point_path(Vector2i((active_point/32).round()), Vector2i((get_global_mouse_position()/32).round()))
-		
 		get_parent().get_parent().get_node("Line2D").points = path
 		pointlist = Array(path)
 		pointlist.pop_front()
