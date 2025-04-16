@@ -216,6 +216,27 @@ _data = {
 &"RESET": SubResource("Animation_e2t24")
 }
 
+[sub_resource type="Gradient" id="Gradient_1exjl"]
+colors = PackedColorArray(0.129558, 0.129559, 0.129558, 1, 0.187176, 0.187176, 0.187176, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_25qpu"]
+gradient = SubResource("Gradient_1exjl")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tqidq"]
+texture = SubResource("GradientTexture2D_25qpu")
+
+[sub_resource type="Gradient" id="Gradient_k0g1t"]
+offsets = PackedFloat32Array(0, 0.0819672, 0.188525, 0.42623, 0.57377, 0.885246, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.179327, 0.179327, 0.179327, 1, 0.355314, 0.355314, 0.355313, 1, 0.252028, 0.252028, 0.252028, 1, 0.144063, 0.144063, 0.144063, 1, 0.144063, 0.144063, 0.144063, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1exjl"]
+gradient = SubResource("Gradient_k0g1t")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_25qpu"]
+texture = SubResource("GradientTexture2D_1exjl")
+
 [sub_resource type="Animation" id="Animation_geor7"]
 resource_name = "Idle_Down"
 length = 0.0333367
@@ -532,27 +553,6 @@ _data = {
 &"Walk_UpRight": SubResource("Animation_xs38g")
 }
 
-[sub_resource type="Gradient" id="Gradient_1exjl"]
-colors = PackedColorArray(0.129558, 0.129559, 0.129558, 1, 0.187176, 0.187176, 0.187176, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_25qpu"]
-gradient = SubResource("Gradient_1exjl")
-fill_to = Vector2(0, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tqidq"]
-texture = SubResource("GradientTexture2D_25qpu")
-
-[sub_resource type="Gradient" id="Gradient_k0g1t"]
-offsets = PackedFloat32Array(0, 0.0819672, 0.188525, 0.42623, 0.57377, 0.885246, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.179327, 0.179327, 0.179327, 1, 0.355314, 0.355314, 0.355313, 1, 0.252028, 0.252028, 0.252028, 1, 0.144063, 0.144063, 0.144063, 1, 0.144063, 0.144063, 0.144063, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1exjl"]
-gradient = SubResource("Gradient_k0g1t")
-fill_to = Vector2(0, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_25qpu"]
-texture = SubResource("GradientTexture2D_1exjl")
-
 [node name="Persistant" type="Node"]
 script = ExtResource("1_avm5g")
 
@@ -604,13 +604,13 @@ texture_filter = 1
 position = Vector2(18, -11)
 rotation = -1.5708
 hframes = 4
-frame = 2
 
 [node name="Sprite2D6" type="Sprite2D" parent="CanvasLayer/Transitioner/Control"]
 texture_filter = 1
 position = Vector2(-40, -11)
 rotation = 1.5708
 hframes = 4
+frame = 2
 
 [node name="Sprite2D7" type="Sprite2D" parent="CanvasLayer/Transitioner/Control"]
 texture_filter = 1
@@ -691,6 +691,111 @@ libraries = {
 &"": SubResource("AnimationLibrary_qifgu")
 }
 
+[node name="Control" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_ml746")
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_tqidq")
+
+[node name="Topbar" type="Panel" parent="CanvasLayer/Control"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_25qpu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Topbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/Control/Topbar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="SpinBox" type="SpinBox" parent="CanvasLayer/Control/Topbar/HBoxContainer"]
+custom_minimum_size = Vector2(131.695, 0)
+layout_mode = 2
+min_value = 1.0
+max_value = 999999.0
+value = 1.0
+rounded = true
+alignment = 1
+prefix = "Columns"
+
+[node name="ExportImageSize" type="Label" parent="CanvasLayer/Control/Topbar/HBoxContainer"]
+layout_mode = 2
+text = "Export Image Size: "
+
+[node name="VSeparator3" type="VSeparator" parent="CanvasLayer/Control/Topbar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/Topbar/HBoxContainer"]
+layout_mode = 2
+text = "Export"
+
+[node name="VSeparator2" type="VSeparator" parent="CanvasLayer/Control/Topbar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 244.0
+stretch_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.049
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.247999
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Control"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(2, 2)
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="CanvasLayer/Control/SubViewport"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Island" type="Sprite2D" parent="Node2D"]
@@ -707,7 +812,7 @@ script = ExtResource("3_geor7")
 Load_Script_ID = Array[String](["TehtoAssets/Character_Controller"])
 Load_Script_Passthrough = Array[Dictionary]([{}])
 Assets_Path = "/root/Main_Scene/CoreLoader/AssetData"
-Character_ID = "TehtoAssets/U.I."
+Character_ID = "TehtoAssets/U.R."
 
 [node name="Hub" type="Node2D" parent="Node2D/Player"]
 
@@ -731,110 +836,5 @@ position_smoothing_enabled = true
 
 [node name="Network_Players" type="Node2D" parent="Node2D"]
 
-[node name="Control" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("11_ml746")
-
-[node name="Panel2" type="Panel" parent="Control"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxTexture_tqidq")
-
-[node name="Topbar" type="Panel" parent="Control"]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 32.0
-grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_25qpu")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/Topbar"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VSeparator" type="VSeparator" parent="Control/Topbar/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 15
-
-[node name="SpinBox" type="SpinBox" parent="Control/Topbar/HBoxContainer"]
-custom_minimum_size = Vector2(131.695, 0)
-layout_mode = 2
-min_value = 1.0
-max_value = 999999.0
-value = 1.0
-rounded = true
-alignment = 1
-prefix = "Columns"
-
-[node name="ExportImageSize" type="Label" parent="Control/Topbar/HBoxContainer"]
-layout_mode = 2
-text = "Export Image Size: "
-
-[node name="VSeparator3" type="VSeparator" parent="Control/Topbar/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 75
-
-[node name="Button2" type="Button" parent="Control/Topbar/HBoxContainer"]
-layout_mode = 2
-text = "Export"
-
-[node name="VSeparator2" type="VSeparator" parent="Control/Topbar/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Panel" type="TextureRect" parent="Control"]
-visible = false
-layout_mode = 0
-offset_right = 260.0
-offset_bottom = 244.0
-stretch_mode = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.049
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 0.247999
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GridContainer" type="GridContainer" parent="Control/ScrollContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 0
-
-[node name="SubViewport" type="SubViewport" parent="Control"]
-disable_3d = true
-transparent_bg = true
-size = Vector2i(2, 2)
-render_target_update_mode = 4
-
-[node name="Control" type="Control" parent="Control/SubViewport"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[connection signal="value_changed" from="Control/Topbar/HBoxContainer/SpinBox" to="Control" method="_on_spin_box_value_changed"]
-[connection signal="pressed" from="Control/Topbar/HBoxContainer/Button2" to="Control" method="_on_button_2_pressed"]
+[connection signal="value_changed" from="CanvasLayer/Control/Topbar/HBoxContainer/SpinBox" to="CanvasLayer/Control" method="_on_spin_box_value_changed"]
+[connection signal="pressed" from="CanvasLayer/Control/Topbar/HBoxContainer/Button2" to="CanvasLayer/Control" method="_on_button_2_pressed"]

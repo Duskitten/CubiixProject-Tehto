@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Cubiix Project: Tehto"
+config/tags=PackedStringArray("cubiix")
 run/main_scene="uid://b743ed8o4h5bc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"

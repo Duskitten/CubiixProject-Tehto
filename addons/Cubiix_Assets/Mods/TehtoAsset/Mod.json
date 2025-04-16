@@ -7,6 +7,9 @@
 		"Characters":{
 			"U.I.":{
 				"Path":"Assets/Textures/Characters/U.I._CharacterSheet.png"
+			},
+			"U.R.":{
+				"Path":"Assets/Textures/Characters/U.R._CharacterSheet.png"
 			}
 		},
 		"Override_Binds":{},
