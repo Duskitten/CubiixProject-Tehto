@@ -5,11 +5,17 @@
 	"ModAuthor" : "Duskitten/Selkspace",
 	"Assets" : {
 		"Characters":{
-			"U.I.":{
+			"U.I._Base":{
 				"Path":"Assets/Textures/Characters/U.I._CharacterSheet.png"
 			},
-			"U.R.":{
+			"U.R._Base":{
 				"Path":"Assets/Textures/Characters/U.R._CharacterSheet.png"
+			},
+			"U.T._Base":{
+				"Path":"Assets/Textures/Characters/U.T._CharacterSheet.png"
+			},
+			"U.G._Base":{
+				"Path":"Assets/Textures/Characters/U.G._CharacterSheet.png"
 			}
 		},
 		"Override_Binds":{},
