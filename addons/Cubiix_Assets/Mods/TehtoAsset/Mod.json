@@ -16,6 +16,9 @@
 			},
 			"U.G._Base":{
 				"Path":"Assets/Textures/Characters/U.G._CharacterSheet.png"
+			},
+			"Teni":{
+				"Path":"Assets/Textures/Characters/Teni_CharacterSheet.png"
 			}
 		},
 		"Override_Binds":{},
