@@ -1,0 +1,131 @@
+[gd_scene load_steps=11 format=3 uid="uid://chhyeixluac2v"]
+
+[ext_resource type="Shader" uid="uid://i1k5niceq2yl" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Shaders/PlayerTehto.gdshader" id="1_y27bd"]
+[ext_resource type="Texture2D" uid="uid://c8y5g33miq321" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Teni_CharacterSheet.png" id="2_lr6jh"]
+[ext_resource type="Texture2D" uid="uid://jvg2ocluwaiw" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/U.R._CharacterSheet.png" id="2_t35pu"]
+[ext_resource type="Texture2D" uid="uid://dew34mhf4000c" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/U.T._CharacterSheet.png" id="3_ya3u2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t35pu"]
+shader = ExtResource("1_y27bd")
+shader_parameter/first_color = ExtResource("2_t35pu")
+shader_parameter/second_color = ExtResource("3_ya3u2")
+shader_parameter/position = 0.0
+shader_parameter/stepIntensify = 1
+shader_parameter/sheet_columns = 8
+shader_parameter/sheet_rows = 10
+
+[sub_resource type="Gradient" id="Gradient_t35pu"]
+offsets = PackedFloat32Array(0, 0.642857, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ya3u2"]
+gradient = SubResource("Gradient_t35pu")
+width = 85
+height = 10
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.411009)
+
+[sub_resource type="Animation" id="Animation_kbo4j"]
+resource_name = "new_animation"
+length = 0.750004
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, -2, 1, 1),
+"update": 0,
+"values": [Vector2(0, -73), Vector2(0, -73), Vector2(0, 23), Vector2(0, 23)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, -2, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.5, 0.75),
+"transitions": PackedFloat32Array(-2, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_yb0xh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -73)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jh45i"]
+_data = {
+&"RESET": SubResource("Animation_yb0xh"),
+&"new_animation": SubResource("Animation_kbo4j")
+}
+
+[node name="ShaderTest" type="Node2D"]
+
+[node name="Character_Texture" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_t35pu")
+texture = ExtResource("2_lr6jh")
+offset = Vector2(0, -25)
+hframes = 8
+vframes = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="Character_Texture"]
+position = Vector2(0, -73)
+texture = SubResource("GradientTexture2D_ya3u2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Character_Texture"]
+libraries = {
+&"": SubResource("AnimationLibrary_jh45i")
+}

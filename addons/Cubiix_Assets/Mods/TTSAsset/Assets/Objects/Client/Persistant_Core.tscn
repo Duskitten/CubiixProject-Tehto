@@ -1,9 +1,12 @@
-[gd_scene load_steps=45 format=3 uid="uid://dvvu2ls7inlev"]
+[gd_scene load_steps=54 format=3 uid="uid://dvvu2ls7inlev"]
 
 [ext_resource type="Script" uid="uid://ktth0ilkl1ry" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Scripts/Client/persistant_core.gd" id="1_avm5g"]
 [ext_resource type="Texture2D" uid="uid://dhq61xcn0rcby" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Maps/Sketches/island.png" id="3_4cnu4"]
 [ext_resource type="Script" uid="uid://1gt6me2qpxop" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Scripts/Client/Player/Character_Manager.gd" id="3_geor7"]
 [ext_resource type="Texture2D" uid="uid://v84l3l0h87wx" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/U.I._CharacterSheet.png" id="4_wnqyt"]
+[ext_resource type="Shader" uid="uid://i1k5niceq2yl" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Shaders/PlayerTehto.gdshader" id="6_60f2h"]
+[ext_resource type="Texture2D" uid="uid://c8y5g33miq321" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Teni_CharacterSheet.png" id="7_87xvc"]
+[ext_resource type="Texture2D" uid="uid://buh4jsjyqchy8" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/U.G._CharacterSheet.png" id="8_60f2h"]
 [ext_resource type="Script" uid="uid://cbeoj6uq50cuc" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Scripts/Client/Tools/Dropper.gd" id="11_ml746"]
 [ext_resource type="FontFile" uid="uid://d4abxqqufataa" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Fonts/Courier-Prime-Code/Courier Prime Code.ttf" id="13_7phac"]
 
@@ -236,6 +239,113 @@ fill_to = Vector2(0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_25qpu"]
 texture = SubResource("GradientTexture2D_1exjl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1exjl"]
+shader = ExtResource("6_60f2h")
+shader_parameter/character_a = ExtResource("7_87xvc")
+shader_parameter/character_b = ExtResource("8_60f2h")
+shader_parameter/position = 0.0
+shader_parameter/stepIntensify = 1
+shader_parameter/sheet_columns = 8
+shader_parameter/sheet_rows = 10
+
+[sub_resource type="Gradient" id="Gradient_t35pu"]
+offsets = PackedFloat32Array(0, 0.642857, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tqidq"]
+gradient = SubResource("Gradient_t35pu")
+width = 85
+height = 10
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.411009)
+
+[sub_resource type="Animation" id="Animation_kbo4j"]
+resource_name = "new_animation"
+length = 0.750004
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, -2, 1, 1),
+"update": 0,
+"values": [Vector2(0, -73), Vector2(0, -73), Vector2(0, 23), Vector2(0, 23)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, -2, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.5, 0.75),
+"transitions": PackedFloat32Array(-2, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_yb0xh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -73)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jh45i"]
+_data = {
+&"RESET": SubResource("Animation_yb0xh"),
+&"new_animation": SubResource("Animation_kbo4j")
+}
 
 [sub_resource type="Animation" id="Animation_geor7"]
 resource_name = "Idle_Down"
@@ -592,7 +702,6 @@ frame = 1
 texture_filter = 1
 position = Vector2(-11, 18)
 hframes = 4
-frame = 2
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/Transitioner/Control"]
 texture_filter = 1
@@ -629,6 +738,7 @@ texture_filter = 1
 position = Vector2(-40, -40)
 rotation = 3.14159
 hframes = 4
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Transitioner/Control"]
 libraries = {
@@ -802,6 +912,7 @@ grow_vertical = 2
 scale = Vector2(5, 5)
 texture = ExtResource("3_4cnu4")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="Line2D" type="Line2D" parent="Node2D"]
 width = 1.0
@@ -817,11 +928,21 @@ Character_ID = "TehtoAssets/Teni"
 [node name="Hub" type="Node2D" parent="Node2D/Player"]
 
 [node name="Character_Texture" type="Sprite2D" parent="Node2D/Player/Hub"]
+material = SubResource("ShaderMaterial_1exjl")
 texture = ExtResource("4_wnqyt")
 offset = Vector2(0, -25)
 hframes = 8
 vframes = 10
 frame = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Player/Hub/Character_Texture"]
+position = Vector2(0, -73)
+texture = SubResource("GradientTexture2D_tqidq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Player/Hub/Character_Texture"]
+libraries = {
+&"": SubResource("AnimationLibrary_jh45i")
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Player/Hub"]
 libraries = {
