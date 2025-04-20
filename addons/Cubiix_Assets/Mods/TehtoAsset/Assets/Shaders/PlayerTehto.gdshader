@@ -17,8 +17,8 @@ void fragment() {
     float column = floor(current_point.x / frame_size.x);
     vec2 max_point = (frame_size * vec2(column, row)) + frame_size;
     vec2 new_uv = 1.0 - (max_point - current_point) / frame_size;
-	float pos = round(smoothstep(0,1,(position + new_uv.y) / 2.0) * float(stepIntensify));
+	float newpos = round(smoothstep(0,1,(position + new_uv.y) / 2.0));
 	vec4 newcolora = texture(character_b,UV);
 	vec4 newcolorb = texture(character_a,UV);
-	COLOR = mix(newcolora,newcolorb,pos/float(stepIntensify)); 
+	COLOR = mix(newcolora,newcolorb,newpos); 
 }
