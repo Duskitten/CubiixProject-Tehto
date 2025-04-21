@@ -20,5 +20,5 @@ void fragment() {
 	float newpos = round(smoothstep(0,1,(position + new_uv.y) / 2.0));
 	vec4 newcolora = texture(character_b,UV);
 	vec4 newcolorb = texture(character_a,UV);
-	COLOR = mix(newcolora,newcolorb,newpos); 
+	COLOR = mix(newcolora,newcolorb,newpos);
 }

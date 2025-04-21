@@ -13,22 +13,47 @@ var TemplateChar
 
 var Tick_Prev = 0
 var Tick_Timer = 0
-
+var serial = Serial.new()
 
 
 func _ready() -> void:
+	
+	print(Serial.list_ports())
+	serial.open("/dev/ttyACM0",115200)
+	
 	Core.Client.NetworkPlayers = Network_Players
 	#Core.AssetData.Tools.clone_character_with_accessories(Player.Hub,Hexii_Ui_Tablet_Character.Hub)
 	$CanvasLayer/Transitioner.visible = true
 	#AudioPlayer.add_child(CurrentAudioPlayer)
 
+func setup_device() -> bool:
+	var exists = false
+	var portname = ""
+	for i in Serial.list_ports():
+		if i.has("product") && i["product"] == "Tehto_Hub":
+			exists = true
+			portname = i["name"]
+			break
+	
+	if exists:
+		if !serial.is_open():
+			serial.open(portname,115200)
+	else:
+		if serial.is_open():
+			serial.close()
 
-#func _process(delta: float) -> void:
-	#var Delta = Time.get_ticks_msec() - Tick_Prev
-	#Tick_Prev = Time.get_ticks_msec()
-	#Tick_Timer += Delta
-	#
-	#if Tick_Timer > 1000/20:
+	return exists
+
+func _process(delta: float) -> void:
+	var Delta = Time.get_ticks_msec() - Tick_Prev
+	Tick_Prev = Time.get_ticks_msec()
+	Tick_Timer += Delta
+	
+	if Tick_Timer > 1000/20:
+		if setup_device():
+			if serial.available():
+				var string = serial.read_str(true)
+				print(string)
 		#Tick_Timer = 0
 		#if AudioHost != null:
 			#for i in AudioHost.get_children():
