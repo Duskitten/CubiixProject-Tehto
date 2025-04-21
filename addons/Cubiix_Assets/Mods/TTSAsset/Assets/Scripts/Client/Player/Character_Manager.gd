@@ -22,7 +22,8 @@ signal ScriptLoaded
 
 func _ready() -> void:
 	Assets = get_node(Assets_Path)
-	#print(Assets)
+	#await get_tree().create_timer(5).timeout
+	
 	emit_signal("Loaded")
 	if !Load_Script_ID.is_empty():
 		for i in Load_Script_ID.size():
@@ -33,8 +34,12 @@ func _ready() -> void:
 				for x in Load_Script_Passthrough[i].keys():
 					NewNode.set(x,Load_Script_Passthrough[i][x])
 	if Animation_Path != "":
-		Assets.find_animation(Animation_Path,$Hub)
-	if Character_ID != "":
-		Assets.find_character(Character_ID,$Hub/Character_Texture)
-
+		Assets.find_animation(Animation_Path,Hub)
+	update_character(Character_ID)
+	
 	call_deferred("emit_signal","ScriptLoaded")
+
+func update_character(ID) -> void:
+	if ID != "" && Hub.current_character != ID:
+		print(ID)
+		Assets.find_character(ID, Hub)

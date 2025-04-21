@@ -193,10 +193,12 @@ func find_command(ID:String) -> Dictionary:
 	
 	return {}
 	
-func find_character(ID:String, ApplyNode:Sprite2D) -> void:
+func find_character(ID:String, ApplyNode:Node2D) -> void:
 	var path = ""
 	var AssetParts = ID.split("/")
+	print(AssetParts)
 	if assets.has(AssetParts[0]) &&\
 		assets[AssetParts[0]].has("Characters") &&\
 		assets[AssetParts[0]]["Characters"].has(AssetParts[1]):
-			ApplyNode.texture = load(assets[AssetParts[0]]["Characters"][AssetParts[1]]["Path"])
+			print("Found!")
+			ApplyNode.change_character(load(assets[AssetParts[0]]["Characters"][AssetParts[1]]["Path"]), ID)

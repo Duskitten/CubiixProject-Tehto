@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dhq61xcn0rcby" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Maps/Sketches/island.png" id="3_4cnu4"]
 [ext_resource type="Script" uid="uid://1gt6me2qpxop" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Scripts/Client/Player/Character_Manager.gd" id="3_geor7"]
 [ext_resource type="Texture2D" uid="uid://v84l3l0h87wx" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/U.I._CharacterSheet.png" id="4_wnqyt"]
+[ext_resource type="Script" uid="uid://c3ei8ko2fa3jl" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Scripts/Client/CharacterManager.gd" id="6_3dgvn"]
 [ext_resource type="Shader" uid="uid://i1k5niceq2yl" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Shaders/PlayerTehto.gdshader" id="6_60f2h"]
 [ext_resource type="Texture2D" uid="uid://c8y5g33miq321" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/Teni_CharacterSheet.png" id="7_87xvc"]
-[ext_resource type="Texture2D" uid="uid://buh4jsjyqchy8" path="res://addons/Cubiix_Assets/Mods/TehtoAsset/Assets/Textures/Characters/U.G._CharacterSheet.png" id="8_60f2h"]
 [ext_resource type="Script" uid="uid://cbeoj6uq50cuc" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Scripts/Client/Tools/Dropper.gd" id="11_ml746"]
 [ext_resource type="FontFile" uid="uid://d4abxqqufataa" path="res://addons/Cubiix_Assets/Mods/TTSAsset/Assets/Fonts/Courier-Prime-Code/Courier Prime Code.ttf" id="13_7phac"]
 
@@ -243,7 +243,7 @@ texture = SubResource("GradientTexture2D_1exjl")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1exjl"]
 shader = ExtResource("6_60f2h")
 shader_parameter/character_a = ExtResource("7_87xvc")
-shader_parameter/character_b = ExtResource("8_60f2h")
+shader_parameter/character_b = ExtResource("7_87xvc")
 shader_parameter/position = 0.0
 shader_parameter/stepIntensify = 1
 shader_parameter/sheet_columns = 8
@@ -919,12 +919,13 @@ width = 1.0
 [node name="Player" type="CharacterBody2D" parent="Node2D"]
 position = Vector2(3513, 3075)
 script = ExtResource("3_geor7")
-Load_Script_ID = Array[String](["TehtoAssets/Character_Controller"])
-Load_Script_Passthrough = Array[Dictionary]([{}])
+Load_Script_ID = Array[String](["TehtoAssets/Character_Controller", "TehtoAssets/Character_Swapper"])
+Load_Script_Passthrough = Array[Dictionary]([{}, {}])
 Assets_Path = "/root/Main_Scene/CoreLoader/AssetData"
 Character_ID = "TehtoAssets/Teni"
 
 [node name="Hub" type="Node2D" parent="Node2D/Player"]
+script = ExtResource("6_3dgvn")
 
 [node name="Character_Texture" type="Sprite2D" parent="Node2D/Player/Hub"]
 material = SubResource("ShaderMaterial_1exjl")

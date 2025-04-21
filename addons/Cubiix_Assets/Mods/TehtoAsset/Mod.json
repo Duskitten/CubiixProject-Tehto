@@ -39,6 +39,9 @@
 			"Character_Controller":{
 				"Path":"Assets/Scripts/Client/Character_Controller.gd"
 			},
+			"Character_Swapper":{
+				"Path":"Assets/Scripts/Client/Character_Swapper.gd"
+			},
 		},
 		"Materials":{},
 		"Animations":{},
