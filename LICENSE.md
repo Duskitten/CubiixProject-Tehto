@@ -1,6 +1,7 @@
+
 MIT License
 
-Copyright (c) 2024-present Cubiix Project Contributors (See CONTRIBUTORS.md)
+Copyright (c) 2024-present Cubiix Project Contributors (See [CONTRIBUTORS.md](https://github.com/Duskitten/CubiixProject-TTS/blob/main/CONTRIBUTORS.md))
 
 Copyright (c) 2022-2024 Duskitten, Selkspace
 
